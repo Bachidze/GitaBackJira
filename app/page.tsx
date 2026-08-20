@@ -400,190 +400,145 @@ export default function Home() {
     <main
       style={{
         minHeight: "100vh",
-        background: "#f5f3ee",
-        color: "#181818",
-        fontFamily: "Arial, Helvetica, sans-serif",
+        background: "#f6f4ef",
+        color: "#1d1d1f",
+        fontFamily: "Arial, sans-serif",
+        paddingBottom: "60px",
       }}
     >
       {/* NAVBAR */}
       <header
         style={{
-          maxWidth: "1280px",
+          maxWidth: "1200px",
           margin: "0 auto",
-          padding: "28px 32px",
+          padding: "28px 30px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           gap: "30px",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "45px",
-          }}
-        >
+        <div>
           <h2
             style={{
               margin: 0,
-              fontSize: "25px",
-              fontWeight: 800,
+              fontSize: "26px",
               letterSpacing: "-1px",
             }}
           >
-            NØRDIK
+            nova.
           </h2>
 
-          <nav
+          <span
             style={{
-              display: "flex",
-              gap: "28px",
-              fontSize: "14px",
-              color: "#656565",
+              color: "#888",
+              fontSize: "12px",
             }}
           >
-            <span>Shop</span>
-            <span>Collections</span>
-            <span>About</span>
-          </nav>
+            modern collection
+          </span>
         </div>
 
         <button
           style={{
             border: "none",
-            background: "#181818",
+            background: "#1d1d1f",
             color: "white",
-            borderRadius: "50px",
             padding: "12px 20px",
-            fontWeight: 600,
+            borderRadius: "30px",
+            fontWeight: "bold",
             cursor: "pointer",
           }}
         >
-          Bag · {cart}
+          Cart · {cart}
         </button>
       </header>
 
-      {/* HERO */}
       <section
         style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "70px 32px 90px",
-          display: "grid",
-          gridTemplateColumns: "1.3fr 0.7fr",
-          alignItems: "end",
-          gap: "50px",
+          maxWidth: "1140px",
+          margin: "20px auto 50px",
+          padding: "60px",
+          borderRadius: "35px",
+          background: "#dfe8d6",
         }}
       >
-        <div>
-          <p
+        <p
+          style={{
+            fontSize: "13px",
+            fontWeight: "bold",
+            letterSpacing: "2px",
+            color: "#67745e",
+          }}
+        >
+          DISCOVER THE COLLECTION
+        </p>
+
+        <h1
+          style={{
+            fontSize: "64px",
+            maxWidth: "700px",
+            margin: "15px 0",
+            lineHeight: "1",
+            letterSpacing: "-3px",
+          }}
+        >
+          Simple products for
+          <span
             style={{
-              margin: "0 0 20px",
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              fontWeight: 700,
-              fontSize: "12px",
-              color: "#e15d35",
+              color: "#67745e",
             }}
           >
-            Curated objects · 2026
-          </p>
+            {" "}
+            modern life.
+          </span>
+        </h1>
 
-          <h1
-            style={{
-              margin: 0,
-              maxWidth: "780px",
-              fontSize: "clamp(55px, 7vw, 100px)",
-              lineHeight: "0.95",
-              letterSpacing: "-5px",
-              fontWeight: 500,
-            }}
-          >
-            Objects worth
-            <br />
-            <span
-              style={{
-                fontStyle: "italic",
-                color: "#e15d35",
-              }}
-            >
-              keeping.
-            </span>
-          </h1>
-        </div>
-
-        <div>
-          <p
-            style={{
-              fontSize: "17px",
-              lineHeight: "1.7",
-              color: "#696969",
-              maxWidth: "370px",
-              margin: "0 0 28px",
-            }}
-          >
-            Thoughtful furniture, technology and everyday objects selected for
-            modern spaces.
-          </p>
-
-          <div
-            style={{
-              position: "relative",
-            }}
-          >
-            <span
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "18px",
-                transform: "translateY(-50%)",
-                color: "#777",
-              }}
-            >
-              ⌕
-            </span>
-
-            <input
-              type="text"
-              placeholder="Search the collection"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              style={{
-                width: "100%",
-                boxSizing: "border-box",
-                padding: "16px 20px 16px 48px",
-                border: "1px solid #d5d1c9",
-                borderRadius: "100px",
-                outline: "none",
-                background: "transparent",
-                color: "#181818",
-                fontSize: "15px",
-              }}
-            />
-          </div>
-        </div>
+        <button
+          style={{
+            color: "#5f6659",
+            fontSize: "18px",
+            maxWidth: "500px",
+            lineHeight: "1.6",
+          }}
+        >
+          Explore furniture, technology and decor designed for everyday life.
+        </p>
       </section>
 
-      {/* FILTER BAR */}
       <section
         style={{
-          maxWidth: "1280px",
+          maxWidth: "1140px",
           margin: "0 auto",
-          padding: "0 32px 35px",
+          padding: "0 20px",
         }}
       >
         <div
           style={{
-            borderTop: "1px solid #d8d5cf",
-            paddingTop: "28px",
             display: "flex",
+            gap: "15px",
             justifyContent: "space-between",
-            alignItems: "center",
-            gap: "20px",
+            marginBottom: "35px",
             flexWrap: "wrap",
           }}
         >
+          <input
+            type="text"
+            placeholder="Search something..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            style={{
+              minWidth: "280px",
+              flex: 1,
+              padding: "16px 20px",
+              borderRadius: "30px",
+              border: "1px solid #ddd",
+              background: "white",
+              outline: "none",
+              fontSize: "15px",
+            }}
+          />
+
           <div
             style={{
               display: "flex",
@@ -591,223 +546,152 @@ export default function Home() {
               flexWrap: "wrap",
             }}
           >
-            {categories.map((item) => (
+            {["All", "Furniture", "Technology", "Decor"].map((item) => (
               <button
                 key={item}
                 onClick={() => setCategory(item)}
                 style={{
-                  border:
-                    category === item
-                      ? "1px solid #181818"
-                      : "1px solid #d3d0ca",
-                  padding: "11px 18px",
-                  borderRadius: "100px",
+                  border: "none",
+                  padding: "12px 18px",
+                  borderRadius: "30px",
                   cursor: "pointer",
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  background: category === item ? "#181818" : "transparent",
-                  color: category === item ? "#fff" : "#555",
+                  background:
+                    category === item ? "#1d1d1f" : "#e8e5df",
+                  color:
+                    category === item ? "white" : "#555",
                 }}
               >
                 {item}
               </button>
             ))}
           </div>
-
-          <span
-            style={{
-              color: "#7d7d7d",
-              fontSize: "14px",
-            }}
-          >
-            {filteredProducts.length} products
-          </span>
         </div>
-      </section>
 
-      {/* PRODUCTS */}
-      <section
-        style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "0 32px 100px",
-          display: "grid",
-          gridTemplateColumns:
-            "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
-          gap: "20px",
-        }}
-      >
-        {filteredProducts.map((product) => {
-          const liked = likes.includes(product.id);
-
-          return (
-            <article
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "22px",
+          }}
+        >
+          {filteredProducts.map((product) => (
+            <div
               key={product.id}
               style={{
-                background: "#fff",
-                borderRadius: "4px",
-                overflow: "hidden",
-                position: "relative",
+                background: "white",
+                borderRadius: "28px",
+                padding: "16px",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
               }}
             >
-              {/* PRODUCT IMAGE */}
               <div
                 style={{
-                  height: "340px",
-                  background: product.color,
-                  position: "relative",
+                  height: "220px",
+                  borderRadius: "22px",
+                  background: "#f0eee9",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  fontSize: "90px",
+                  position: "relative",
                 }}
               >
-                <span
-                  style={{
-                    fontSize: "105px",
-                    filter: "drop-shadow(0 25px 18px rgba(0,0,0,.10))",
-                  }}
-                >
-                  {product.emoji}
-                </span>
+                {product.emoji}
 
                 <button
                   onClick={() => toggleLike(product.id)}
-                  aria-label="Add product to favorites"
                   style={{
                     position: "absolute",
-                    right: "16px",
-                    top: "16px",
+                    right: "15px",
+                    top: "15px",
                     width: "42px",
                     height: "42px",
                     borderRadius: "50%",
                     border: "none",
-                    background: "rgba(255,255,255,.85)",
-                    fontSize: "22px",
+                    background: "white",
                     cursor: "pointer",
-                    color: liked ? "#e15d35" : "#181818",
+                    fontSize: "21px",
+                    color: likes.includes(product.id)
+                      ? "#e75c5c"
+                      : "#777",
                   }}
                 >
-                  {liked ? "♥" : "♡"}
+                  {likes.includes(product.id) ? "♥" : "♡"}
                 </button>
+              </div>
 
+              <div
+                style={{
+                  padding: "18px 8px 8px",
+                }}
+              >
                 <span
                   style={{
-                    position: "absolute",
-                    left: "16px",
-                    top: "16px",
-                    background: "rgba(255,255,255,.85)",
-                    borderRadius: "100px",
-                    padding: "8px 12px",
-                    fontSize: "11px",
+                    color: "#9a9a9a",
+                    fontSize: "12px",
                     textTransform: "uppercase",
-                    letterSpacing: "1px",
                   }}
                 >
                   {product.category}
                 </span>
-              </div>
 
-              {/* DETAILS */}
-              <div
-                style={{
-                  padding: "20px",
-                }}
-              >
+                <h3
+                  style={{
+                    fontSize: "21px",
+                    margin: "7px 0 12px",
+                  }}
+                >
+                  {product.title}
+                </h3>
+
                 <div
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    gap: "20px",
-                    alignItems: "flex-start",
+                    alignItems: "center",
                   }}
                 >
-                  <div>
-                    <h3
-                      style={{
-                        margin: "0 0 7px",
-                        fontSize: "18px",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {product.title}
-                    </h3>
-
-                    <p
-                      style={{
-                        margin: 0,
-                        color: "#8a8a8a",
-                        fontSize: "13px",
-                      }}
-                    >
-                      Designed for everyday living
-                    </p>
-                  </div>
-
                   <strong
                     style={{
-                      fontSize: "17px",
-                      whiteSpace: "nowrap",
+                      fontSize: "20px",
                     }}
                   >
                     ${product.price}
                   </strong>
+
+                  <button
+                    onClick={() => setCart(cart + 1)}
+                    style={{
+                      border: "none",
+                      background: "#dfe8d6",
+                      color: "#313a2b",
+                      padding: "11px 18px",
+                      borderRadius: "25px",
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Add +
+                  </button>
                 </div>
-
-                <button
-                  onClick={() => setCart((prev) => prev + 1)}
-                  style={{
-                    marginTop: "22px",
-                    width: "100%",
-                    padding: "14px",
-                    border: "1px solid #181818",
-                    background: "transparent",
-                    color: "#181818",
-                    cursor: "pointer",
-                    fontWeight: 600,
-                    fontSize: "14px",
-                  }}
-                >
-                  Add to bag
-                </button>
               </div>
-            </article>
-          );
-        })}
-      </section>
-
-      {filteredProducts.length === 0 && (
-        <div
-          style={{
-            textAlign: "center",
-            padding: "60px 20px 120px",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "42px",
-              margin: "0 0 10px",
-            }}
-          >
-            ☹
-          </p>
-
-          <h2
-            style={{
-              margin: "0 0 8px",
-            }}
-          >
-            Nothing here
-          </h2>
-
-          <p
-            style={{
-              color: "#777",
-            }}
-          >
-            Try another search or category.
-          </p>
+            </div>
+          ))}
         </div>
-      )}
+
+        {filteredProducts.length === 0 && (
+          <div
+            style={{
+              textAlign: "center",
+              padding: "70px",
+              color: "#888",
+            }}
+          >
+            <h2>Nothing found 🤷</h2>
+            <p>Try another product or category.</p>
+          </div>
+        )}
+      </section>
     </main>
   );
 }
