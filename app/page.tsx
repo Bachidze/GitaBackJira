@@ -58,8 +58,7 @@ export default function Home() {
       .toLowerCase()
       .includes(search.toLowerCase());
 
-    const matchesCategory =
-      category === "All" || product.category === category;
+    const matchesCategory = category === "All" || product.category === category;
 
     return matchesSearch && matchesCategory;
   });
@@ -127,7 +126,115 @@ export default function Home() {
           Cart · {cart}
         </button>
       </header>
+      <section
+        style={{
+          maxWidth: "1140px",
+          margin: "0 auto 60px",
+          padding: "0 20px",
+        }}
+      >
+        <div
+          style={{
+            marginBottom: "30px",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "12px",
+              fontWeight: "bold",
+              letterSpacing: "2px",
+              color: "#8a8a8a",
+              marginBottom: "10px",
+            }}
+          >
+            WHY NOVA
+          </p>
 
+          <h2
+            style={{
+              fontSize: "36px",
+              margin: 0,
+              letterSpacing: "-1.5px",
+            }}
+          >
+            Designed for everyday living.
+          </h2>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "16px",
+          }}
+        >
+          {[
+            {
+              icon: "✦",
+              title: "Curated Design",
+              description:
+                "Every product is selected for its simple, functional and timeless design.",
+            },
+            {
+              icon: "♻",
+              title: "Made to Last",
+              description:
+                "Quality materials and thoughtful details for products you can enjoy longer.",
+            },
+            {
+              icon: "↗",
+              title: "Fast Delivery",
+              description:
+                "Simple ordering and reliable delivery straight to your door.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              style={{
+                background: "#ebe8e1",
+                borderRadius: "24px",
+                padding: "30px",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "50%",
+                  background: "#dfe8d6",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "20px",
+                  marginBottom: "35px",
+                }}
+              >
+                {item.icon}
+              </div>
+
+              <h3
+                style={{
+                  fontSize: "20px",
+                  margin: "0 0 10px",
+                }}
+              >
+                {item.title}
+              </h3>
+
+              <p
+                style={{
+                  color: "#777",
+                  lineHeight: "1.6",
+                  fontSize: "14px",
+                  margin: 0,
+                }}
+              >
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
       <section
         style={{
           maxWidth: "1140px",
@@ -229,10 +336,8 @@ export default function Home() {
                   padding: "12px 18px",
                   borderRadius: "30px",
                   cursor: "pointer",
-                  background:
-                    category === item ? "#1d1d1f" : "#e8e5df",
-                  color:
-                    category === item ? "white" : "#555",
+                  background: category === item ? "#1d1d1f" : "#e8e5df",
+                  color: category === item ? "white" : "#555",
                 }}
               >
                 {item}
@@ -285,9 +390,7 @@ export default function Home() {
                     background: "white",
                     cursor: "pointer",
                     fontSize: "21px",
-                    color: likes.includes(product.id)
-                      ? "#e75c5c"
-                      : "#777",
+                    color: likes.includes(product.id) ? "#e75c5c" : "#777",
                   }}
                 >
                   {likes.includes(product.id) ? "♥" : "♡"}
